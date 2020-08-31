@@ -6,7 +6,11 @@ namespace CarLotSimulator
     {
         static void Main(string[] args)
         {
-            //TODO
+            //Instanciate the a Carlot at the beginning of the program and as you create a car add the car to the list.
+
+            var lot = new CarLot();
+            
+
 
             //DONE - Create a seperate class file called Car
             //Car shall have the following properties: Year, Make, Model, EngineNoise, HonkNoise, IsDriveable
@@ -27,6 +31,8 @@ namespace CarLotSimulator
             ryansCar.HonkNoise = "LOUD";
             ryansCar.IsDriveable = true;
 
+            lot.Cars.Add(ryansCar);
+
            
             //Instantiation 2 "Object initializer syntax"
             var missysCar = new Car()
@@ -39,10 +45,13 @@ namespace CarLotSimulator
                 IsDriveable = true
             };
 
+            lot.Cars.Add(missysCar);
+
             //Instantiation 3 "using the constructer to allow parameter values to be placed inside properties"
             //All parameters are required to use this way
             var ryansBike = new Car(1994, "Harley-Davidson", "FXRP", "VERY LOUD", "NONE", true);
 
+            lot.Cars.Add(ryansBike);
 
             //Call Methods
             ryansCar.MakeEngineNoise();
@@ -67,7 +76,10 @@ namespace CarLotSimulator
             //Instanciate the a Carlot at the beginning of the program and as you create a car add the car to the list.
             //At the end iterate through the list printing each of car's Year, Make, and Model to the console
 
-
+            foreach (var car in lot.Cars)
+            {
+                Console.WriteLine($"Year: {car.Year} Make: {car.Make} Model {car.Model}");
+            }
 
 
         }
