@@ -9,6 +9,8 @@ namespace CarLotSimulator
         //DONE -The methods should take one string parameter: the respective noise property 
         public Car()
         {
+            CarLot.numberOfCars++;
+            //ClassName.StaticMember
         }
 
         public Car(int year,
